@@ -1,0 +1,56 @@
+<div class="navbar-fixed">
+<nav>
+  <div class="nav-wrapper blue lighten-2">
+    <%= image_tag("Screen_Shot.png", size: "100x64", :alt => "logo") %>
+    <a href="/" class="brand-logo center ">AERO</a>
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to "Main Menu", user_path(current_user.id) %></li>
+      <li><%= link_to "Book Flight", new_search_path %></li>
+      <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+<div class="container input-field">
+  <ul id = "errors">
+<% if flash[:error] %>
+  <% flash[:error].each do |err| %>
+    <%= err  %>
+  <% end %>
+<% end  %>
+</div>
+
+
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card">
+      <div class="rev_img">
+        <%= image_tag("kyle-glenn-678340-unsplash.jpg", style:"height: 50%; width: 100%;") %>
+        <div class="review_title">
+            <h2>Leave a Review</h2>
+        </div>
+      </div>
+        <div class="card-content">
+          <%= form_for @review, url: flight_reviews_path do |f| %>
+            <div class="input-field col s6">
+            <%= f.collection_select(:flight_id, @my_flights, :id, :name) %>
+            <%= f.label "Flight Name:" %><br>
+            </div>
+
+            <div class="input-field col s6">
+            <%= f.select :rating, [ 1, 2, 3, 4, 5] %>
+            <%= f.label "Rating" %><br>
+            </div>
+
+            <%= f.label "Comment:" %><br>
+            <%= f.text_area :content %><br>
+            <div class="waves-effect waves-dark btn blue lighten-2 btn" style="width:100%;">
+            <%= f.submit "Submit Review" %>
+            </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>

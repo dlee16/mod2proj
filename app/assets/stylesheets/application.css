@@ -1,0 +1,208 @@
+@import "materialize";
+
+
+/* Welcome image */
+.container1 {
+  position: fixed;
+  width: 100%;
+}
+
+/* Welcome text */
+.text-block1 {
+  position: fixed;
+  left: 0;
+  top: 13%;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.text-block2 {
+  position: fixed;
+  left: 0;
+  top: 21%;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+/* Bottom right text */
+.container2 {
+  position: fixed;
+  left: 35%;
+  top: 40%;
+  width: 70%;
+}
+
+.container3 {
+  position: fixed;
+  left: 54%;
+  top: 40%;
+  width: 70%;
+}
+
+.container4 {
+  position: fixed;
+  left: 32%;
+  top: 35%;
+  width: 80%;
+}
+
+/* Login */
+.login {
+  position: fixed;
+
+}
+
+#errors {
+    font-size: 100%;
+    color: #1565c0;
+    text-align: center;
+    left: 32%;
+ }
+
+
+.reserve_flight{
+  position: fixed;
+  left: 40%;
+  top: 35%;
+}
+
+.flight_show{
+  position: absolute;
+}
+
+.container5 {
+  position: relative;
+  width: 80%;
+  top: 20%;
+  left: 10%;
+  background: rgba(255,255,255,.8);
+  color: #0d47a1;
+}
+
+.container6 {
+  position: relative;
+  color: #ffffff;
+}
+
+
+#card-image_res{
+  position: relative;
+  width: 50%;
+  top: 20%;
+  left: 30%;
+}
+
+#res_header{
+  position: absolute;
+  left: 15%;
+  top: 30%;
+  width: 100%;
+  background: rgba(255,255,255,.1);
+}
+
+.review_main{
+position: relative;
+right: 1%;
+bottom: 4%;
+width: 100%;
+margin: 1%;
+color: white;
+text-align: center;
+}
+
+.res_main{
+position: relative;
+left: 0;
+bottom: 4%;
+width: 100%;
+margin: 1%;
+color: white;
+text-align: center;
+}
+
+.review_title{
+  position: absolute;
+  left: 23%;
+  top: 22%;
+  color: white;
+  background: rgba(0,131,143, 0.2);
+}
+
+.card-image1{
+  position: absolute;
+  padding-left: 12%;
+  top: 29%;
+  left: 5%;
+}
+
+#review_index{
+  position: relative;
+  width: 40%;
+  top: 20%;
+  left: 30%;
+  padding-top: 1%;
+}
+
+#review1{
+position: absolute;
+left: 13%;
+top: 33%;
+width: 100%;
+color: white;
+}
+
+#search_header{
+  position: absolute;
+  left: 2%;
+  top: 30%;
+  width: 100%;
+  color: #ffffff;
+}
+
+.flight_image{
+  position: fixed;
+}
+
+h3,p {
+  color: #64b5f6;
+}
+
+.user_form{
+  padding-left: 10%;
+  padding-top: 1%
+}
+
+.card_image_res{
+  position: relative;
+}
+/*
+h1 {
+  color: green
+}
+
+.header {
+  height: 400px;
+  background-image: url('/assets/Orbit.jpg');
+  text-align: center;
+  background-size: cover;
+
+
+}
+body {
+
+  text-align: center;
+  background-color: #d8dddf;
+
+}
+button {
+  color :blue
+}
+
+div.text label {
+ text-align: right;
+}
+div.text input {
+ text-align: left;
+} */

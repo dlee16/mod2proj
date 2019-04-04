@@ -1,0 +1,92 @@
+<div class="navbar-fixed">
+<nav>
+  <div class="nav-wrapper blue lighten-2">
+    <%= image_tag("Screen_Shot.png", size: "100x65", :alt => "logo") %>
+    <a href="/" class="brand-logo center ">AERO</a>
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to "Search flights", new_search_path %></li>
+      <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+<div class="container input-field">
+  <ul id = "errors">
+    <% if @error %>
+        <%@error.each do |err| %>
+        <li> <%= err %> </li>
+        <% end %>
+    <% end %>
+</ul>
+</div>
+
+
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card">
+      <div class="user_form">
+        <%= image_tag("irving-martinez-580112-unsplash.jpg", style:"height: 50%; width: 90%;") %>
+      </div>
+
+        <div class="card-content">
+          <%= form_for @user do |u| %>
+            <div class="input-field col s6">
+              <%= u.label 'First Name' %> <br>
+            <%= u.text_field :first_name, class:"input-field" %>
+            </div>
+
+            <div class="input-field col s6">
+              <%= u.label 'Last Name' %> <br>
+            <%= u.text_field :last_name %><br>
+            </div>
+
+          <div class="input-field col s6">
+            <%= u.number_field :age %><br>
+            <%= u.label 'Age' %>
+          </div>
+
+          <div class="input-field col s9">
+            <%= u.text_field :email %><br>
+            <%= u.label 'Email' %>
+            </div>
+
+          <div class="input-field col s9">
+            <%= u.text_field :address_1 %>
+            <%= u.label 'Address 1' %><br>
+            </div>
+
+          <div class="input-field col s6">
+            <%= u.text_field :city %>
+            <%= u.label 'City' %><br>
+            </div>
+
+          <div class="input-field col s3">
+            <%= u.text_field :state %><br>
+            <%= u.label 'State' %>
+            </div>
+
+          <div class="input-field col s3">
+            <%= u.text_field :zipcode %><br>
+            <%= u.label 'ZipCode' %>
+            </div>
+
+          <div class="input-field col s9">
+            <%= u.text_field :phone %><br>
+            <%= u.label 'Phone' %>
+            </div>
+
+          <div class="input-field col s9">
+            <%= u.password_field :password %><br>
+            <%= u.label 'Password' %>
+            </div>
+
+            <div class="waves-effect waves-dark btn #64b5f6 blue lighten-2 btn-large" style="width:100%;">
+            <%= u.submit %>
+            </div><br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  airline: MyString
+  date: 2019-03-22 11:28:09
+
+two:
+  name: MyString
+  airline: MyString
+  date: 2019-03-22 11:28:09

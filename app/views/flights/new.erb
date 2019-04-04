@@ -1,0 +1,62 @@
+<div class="navbar-fixed">
+<nav>
+  <div class="nav-wrapper blue lighten-2">
+    <%= image_tag("Screen_Shot.png", size: "100x65", :alt => "logo") %>
+    <a href="/" class="brand-logo center ">AERO</a>
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to "Back to Main", user_path(current_user.id) %></li>
+      <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+<div class="container input-field">
+  <ul id = "errors">
+      <%= flash[:search_error] %>
+    <%= flash[:match_error] %>
+</div>
+
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag("christine-roy-343235-unsplash.jpg", style:"height: 50%; width: 100%;") %>
+          <div id="search_header">
+        <h1 class="center-align">Search for flights</h1>
+      </div>
+      </div>
+        <div class="card-content">
+            <%= form_for @new_flight, url: flights_path, method: :get do |f| %>
+              <div class="input-field col s6">
+                <% selection1 = ["NY", "CA", "FL", "AZ", "WA", "OR", "CT", "MA", "VT", "IN", "KY", "KS", "IL", "NC", "PA", "NJ"] %>
+                <% sorted1 =selection1.sort %>
+                <%= f.select :state, sorted1 %>
+                <%= f.label :origin %><br>
+              </div>
+
+              <div class="input-field col s6">
+                <% selection2 = ["NY", "CA", "FL", "AZ", "WA", "OR", "CT", "MA", "VT", "IN", "KY", "KS", "IL", "NC", "PA", "NJ"] %>
+                <% sorted2 =selection2.sort %>
+                <%= f.select :destination_state, sorted2 %>
+                <%= f.label :destination %><br>
+              </div>
+
+            <div class="col s6">
+                <%= f.label :departure_date, "Departure Date" %><br/>
+                <%= f.date_field :date %>
+            </div>
+
+                <div class="col s6">
+                    <%= f.label :return_date, "Return Date" %><br/>
+                    <%= f.date_field :return_date %>
+                </div>
+
+              <div class="waves-effect waves-dark btn #64b5f6 blue lighten-2 btn-large" style="width:100%;"><%= f.submit "                                    Search                                    " %>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>

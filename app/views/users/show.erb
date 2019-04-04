@@ -1,0 +1,59 @@
+<div class="navbar-fixed">
+<nav>
+  <div class="nav-wrapper blue lighten-2">
+    <%= image_tag("Screen_Shot.png", size: "100x64", :alt => "logo") %>
+    <a href="/" class="brand-logo center ">AERO</a>
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to "Book Flight", new_search_path %></li>
+      <li><%= link_to "Log Out", logout_path, :method => :delete%></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+<br>
+  <h3 class="center-align"> Welcome <%= current_user.full_name %>!</h3>
+
+<div class="container">
+      <div class="card-image1">
+        <%= image_tag("stil-336189-unsplash.jpg", style:"height: 100%; width: 34%;") %>
+      </div>
+          <div class="row">
+            <div class="col s6 offset-s5">
+              <div class="card">
+
+        <div class="card-stacked">
+          <div class="card-content">
+            <p class="center-align">Profile<p>
+              <div class="divider"></div>
+              <div class="center-align">
+
+              <label class="blue-text text-lighten-2"> Member Since: </label>
+              <%= current_user.member_since %><br>
+                <div class="divider"></div>
+              <label class="blue-text text-lighten-2">Number of flights booked:</label>
+              <%= current_user.number_of_flights_booked %><br>
+                <div class="divider"></div>
+              <label class="blue-text text-lighten-2"> Average spent on flights:</label>
+            $<%= current_user.avg_spending_on_flights %>
+          </div>
+        </div>
+        <div class="card-action">
+          <div class="center-align">
+
+        <div> <%= button_to "Book flights", new_search_path, :method => :get, class: "waves-effect waves-light btn-small white blue-text text-lighten-2" %></div><br>
+         <div> <%= button_to "View My Reservations", reservations_path, :method => :get, class: "waves-effect waves-light btn-small white blue-text text-lighten-2" %></div><br>
+         <div> <%= button_to "See all reviews", reviews_path, :method => :get, class: "waves-effect waves-light btn-small white blue-text text-lighten-2" %></div><br>
+         <div> <%= button_to "Edit My Profile", edit_user_path(@user.id), :method => :get, class: "waves-effect waves-light btn-small white blue-text text-lighten-2"%></div><br>
+         <% if current_user.email == @user.email %>
+          <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' },class: "waves-effect waves-light btn-small white blue-text text-lighten-2"%>
+        <% end %><br>
+         <div> <%= button_to "Log out", logout_path, :method => :delete, class: "waves-effect waves-light btn-small white blue-text text-lighten-2" %></div>
+         <br>
+       </div>
+       </div>
+     </div>
+   </div>
+</div>
+
+</div>

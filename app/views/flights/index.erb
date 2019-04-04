@@ -1,0 +1,51 @@
+<div class="navbar-fixed">
+<nav>
+  <div class="nav-wrapper blue lighten-2">
+    <%= image_tag("Screen_Shot.png", size: "100x65", :alt => "logo") %>
+    <a href="/" class="brand-logo center ">AERO</a>
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to "Search flights", new_search_path %></li>
+      <li><%= link_to "Back to Main", user_path(current_user.id) %></li>
+      <li><%= link_to "Log Out", logout_path, :method => :delete %></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+
+<div class="flight_show">
+  <%= image_tag("ian-dooley-280928-unsplash.jpg", style:"height: 50%; width: 100%;") %>
+</div>
+
+
+<div class="container5">
+
+<div class="container">
+  <h4 class="center-align">Flights that match your criteria</h4>
+  <div class="row">
+    <% @flights.each do |flight| %>
+      <div class="col s5 offset-s1">
+        <label class="blue-text text-darken-4">Airline:</label>
+        <%= flight.airline %><br>
+        <label class="blue-text text-darken-4">Airline Price:$</label>
+        <%= flight.price %><br>
+        <label class="blue-text text-darken-4">Departure Date:</label>
+        <%= flight.date.strftime("%B %d, %Y")%><br>
+        <label class="blue-text text-darken-4">Return Date:</label>
+        <%= flight.return_date.strftime("%B %d, %Y") %><br>
+        <label class="blue-text text-darken-4">Origin:</label>
+        <%= flight.state %><br>
+        <label class="blue-text text-darken-4">Destination:</label> -
+        <%= flight.destination_state %><br><br>
+          <%= button_to "Reserve this flight", flight_reservations_path(flight.id), class:"waves-effect waves-dark btn blue lighten-2 btn" %>
+          <hr>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="waves-effect waves-dark btn #64b5f6 blue lighten-2 btn" style="width:100%;">
+      <%= button_to "Back to Search", new_search_path, :method => :get %>
+    </div>
+</div>
+
+</div>
